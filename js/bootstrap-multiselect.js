@@ -176,7 +176,9 @@
 			var value = $(element).val();
 			var inputType = this.options.multiple ? "checkbox" : "radio";
 
-			var $li = $('<li><a href="javascript:void(0);" style="padding:0;"><label style="margin:0;padding:3px 20px 3px 20px;height:100%;cursor:pointer;"><input style="margin-bottom:5px;" type="' + inputType + '" /></label></a></li>');
+			var cssClass = $(element).attr('class') || '';
+
+		        var $li = $('<li' + (cssClass == '' ? '' : ' class="' + cssClass + '"') + '><a href="javascript:void(0);" style="padding:0;"><label style="margin:0;padding:3px 20px 3px 20px;height:100%;cursor:pointer;"><input style="margin-bottom:5px;" type="' + inputType + '" /></label></a></li>');
 
 			var selected = $(element).prop('selected') || false;
 			var $checkbox = $('input', $li);
